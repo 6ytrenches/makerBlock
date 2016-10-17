@@ -4,7 +4,15 @@
   <title></title>
 </head>
 <body>
-<nav> </nav>
+
+    <nav>
+      <ul>
+      <% $menu.each do |item| %>
+      <li> <a href="<%= item[:href] %>"> <%= item[:page] %> </a></li>
+      <% end %>
+      </ul>
+    </nav> 
+
 <%= yield %>
 </body>
 </html>
