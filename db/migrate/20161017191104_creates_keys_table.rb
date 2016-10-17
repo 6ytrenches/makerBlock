@@ -4,3 +4,4 @@ class CreatesKeysTable < ActiveRecord::Migration
    rename_column :post, :user, :user_id
  end
 end
+end
