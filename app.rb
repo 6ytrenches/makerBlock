@@ -8,6 +8,7 @@ $menu = [
   {page: 'main', href: '/generalPage'},
   {page: 'home', href: '/home'}
   ]
+  
  get '/' do 
   @body_class ='home'
   erb :home
@@ -27,9 +28,33 @@ end
 # end
 
 
+get '/' do 
+@regus = User.find_by(email: @user)
+ erb :home
+end
+
+post '/' do
+  
+	# a = params["bob"].to_s
+  @regus = User.create(params)
+  @user = @regus.email
+  erb :home
+end
+#-------------------------
+
+
+
+
+# ------------------------
+
+
+get '/personal' do 
+
+ erb :personal
+end
 
 post '/personal' do
-  erb :personal 
+ erb :personal 
 end
 #-------------------------
 
