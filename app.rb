@@ -21,7 +21,6 @@ end
 get '/registration' do 
  
  erb :registration
-
 end
 
 post '/registration' do
@@ -53,22 +52,6 @@ post '/home' do
   erb :personal
 end
 
-# get '/company/:id' do 
-#   @company = Company.find(params[:id])
-#   erb :company_profile
-# end
-
-# ------------------------
-
-
-get '/user/:id' do 
-  @user = User.find(params[:id])
-  erb :personal
-end
-
-post '/user' do
- erb :personal 
-end
 
 
 #-------------------------
@@ -83,3 +66,17 @@ post '/posts' do
   erb :generalPage
 end
 
+#-------------------------
+get '/editpersonal' do
+  erb :editpersonal
+end
+
+
+
+post '/editpersonal' do
+  #if user is already in the system. also creating a new user
+  @edited = User.create_with(locked: false).find_or_create_by(params)
+
+  # @user = @regus.email
+  erb :editpersonal
+end

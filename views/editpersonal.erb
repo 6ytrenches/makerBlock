@@ -1,0 +1,31 @@
+<div id="editpersonals">
+  <form method="POST" action="/editpersonal">
+<h2>Edit Your Profile</h2>
+  <label>First Name</label>
+
+  <input name="[newinfo]fname" value="<%= @user_update.fname %>" /><br />
+    <label>Last Name</label>
+
+    <input name="[newinfo]lname" value="<%= @user_update.lname %>"/><br />
+    <label>Email</label><input name="[newinfo]email" value="<%= @user_update.email%>"
+    /><br />
+
+    <label>Username</label>
+    <input name="[newinfo]username" value="<%= @user_update.username %>"
+    /><br />
+
+    <label>Password</label>
+    <input name="[newinfo]password" value="<%= @user_update.password%>"
+    /><br />
+
+    <label>DOB</label>
+    <input name="[newinfo]bob" value="<%= @user_update.dob %>"/><br />
+    
+    <label>Gender</label>
+      <select name="[newinfo]gender" value="<%= @user_update.gender %>">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select><br />
+    <input type="submit" value="EDIT" />
+  </form>
+</div>
