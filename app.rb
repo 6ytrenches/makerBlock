@@ -14,16 +14,26 @@ get '/home' do
  erb :home
 end
 
+post '/home' do
+  
+  a = params["email"].to_s
+  b = User.find_by(email: a)
+
+  @confirmation = "Welcome " + b[:fname] + " " + b[:lname]
+  # @user = @regus.email
+  erb :error
+end
 
 #-------------------------
 get '/registration' do 
+ 
  erb :registration
+
 end
 
 post '/registration' do
   
-  # a = params["bob"].to_s
-  @regus = User.create(params)
+  @regus = User.create_with(locked: false).find_or_create_by(params)
   # @user = @regus.email
   erb :registration
 end

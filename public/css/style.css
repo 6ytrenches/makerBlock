@@ -1,7 +1,22 @@
-
 body {
-	background-color: grey;
+	background-color: rgb(204, 210, 221);
+	text-align: center;
 }
 li {
 	display: inline-block;
+}
+
+#login {
+	margin-top: 100px;
+	text-align: center;
+}
+
+#lgb {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#registration input,  #registration select {
+	margin-top: 20px;
+	
 }
