@@ -12,10 +12,8 @@ $menu = [
   ]
   
 get '/home' do 
-# @regus = User.find_by(email: @user)
  erb :home
 end
-
 
 
 #-------------------------
@@ -74,12 +72,16 @@ end
 
 #-------------------------
 
-get '/posts' do
-  @posts = Post.all
+get '/general' do
   erb :generalPage
 end
 
-post '/posts' do 
+post '/general' do 
+  c = params["username"]
+  d = User.find_by(username: c)
+  e = d[:id].to_i
+  Post.create(id: e, content: params["content"])
+  @comment = Post.first.to_s
   erb :generalPage
 end
 
