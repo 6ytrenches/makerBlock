@@ -1,3 +1,7 @@
-#registration {
-	display: hidden;
+
+body {
+	background-color: grey;
+}
+li {
+	display: inline-block;
 }

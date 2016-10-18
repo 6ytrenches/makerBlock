@@ -14,12 +14,18 @@ get '/home' do
  erb :home
 end
 
-post '/' do
+
+#-------------------------
+get '/registration' do 
+ erb :registration
+end
+
+post '/registration' do
   
   # a = params["bob"].to_s
   @regus = User.create(params)
   # @user = @regus.email
-  erb :home
+  erb :registration
 end
 #-------------------------
 
