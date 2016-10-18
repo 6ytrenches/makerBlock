@@ -20,7 +20,6 @@ end
 get '/registration' do 
  
  erb :registration
-
 end
 
 post '/registration' do
@@ -52,22 +51,6 @@ post '/home' do
   erb :personal
 end
 
-# get '/company/:id' do 
-#   @company = Company.find(params[:id])
-#   erb :company_profile
-# end
-
-# ------------------------
-
-
-get '/user/:id' do 
-  @user = User.find(params[:id])
-  erb :personal
-end
-
-post '/user' do
- erb :personal 
-end
 
 
 #-------------------------
@@ -76,12 +59,31 @@ get '/general' do
   erb :generalPage
 end
 
+<<<<<<< HEAD
 post '/general' do 
   c = params["username"]
   d = User.find_by(username: c)
   e = d[:id].to_i
   Post.create(id: e, content: params["content"])
   @comment = Post.first.to_s
+=======
+post '/posts' do 
+  
+>>>>>>> 5589160029deedeaf69450e2e6fceaf5dd7f97a4
   erb :generalPage
 end
 
+#-------------------------
+get '/editpersonal' do
+  erb :editpersonal
+end
+
+
+
+post '/editpersonal' do
+  #if user is already in the system. also creating a new user
+  @edited = User.create_with(locked: false).find_or_create_by(params)
+
+  # @user = @regus.email
+  erb :editpersonal
+end

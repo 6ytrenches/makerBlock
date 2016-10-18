@@ -1,4 +1,20 @@
 <style type="text/css">
+ .button {
+    position: relative;
+    right: 10px;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
 #ProfilePage
 {
     /* Move it off the top of the page, then centre it horizontally */
@@ -80,7 +96,7 @@ border: 1px solid purple;
     <div id="LeftCol">
         <div id="Photo"></div>
         <div id="ProfileOptions">
-        a
+        <%=@username %>
         </div>
     </div>
 
@@ -104,12 +120,17 @@ border: 1px solid purple;
             <span> <%=@email%> </span>
         </p>
         <p>
-            <strong>gender:</strong>
+            <strong>Gender:</strong>
             <span> <%=@gender%> </span>
         </p>
 
+            <p>
+            <strong> Comment History: </strong>
+            <span id="infobox"> </span>
+            </p>
     </div>
 
+<button  onclick="location.href='/editpersonal'" class="button">EDIT PROFILE</button>
     <!-- Needed because other elements inside ProfilePage have floats -->
     <div style="clear:both"></div>
 </div>
