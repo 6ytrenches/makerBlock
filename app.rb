@@ -5,16 +5,23 @@ require './models'
 set :database, "sqlite3:uncubed.sqlite3"
 
 $menu = [
-  {page: 'main', href: '/generalPage'},
-  {page: 'home', href: '/home'}
+  {page: 'main', href: './generalPage'},
+  {page: 'home', href: './home'}
   ]
   
- get '/' do 
-  @body_class ='home'
-  erb :home
+get '/home' do 
+# @regus = User.find_by(email: @user)
+ erb :home
 end
 
-# ------------------------
+post '/' do
+  
+  # a = params["bob"].to_s
+  @regus = User.create(params)
+  # @user = @regus.email
+  erb :home
+end
+#-------------------------
 
 
 get '/personal/:id' do 
@@ -26,23 +33,6 @@ end
 #   @company = Company.find(params[:id])
 #   erb :company_profile
 # end
-
-
-get '/' do 
-@regus = User.find_by(email: @user)
- erb :home
-end
-
-post '/' do
-  
-	# a = params["bob"].to_s
-  @regus = User.create(params)
-  @user = @regus.email
-  erb :home
-end
-#-------------------------
-
-
 
 
 # ------------------------
