@@ -7,7 +7,8 @@ set :database, "sqlite3:uncubed.sqlite3"
 $menu = [
 
   {page: 'main', href: './generalPage'},
-  {page: 'home', href: './home'}
+  {page: 'home', href: './home'},
+  {page: 'personal', href: './profile'}
   ]
   
 get '/home' do 
