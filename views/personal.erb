@@ -85,28 +85,27 @@ border: 1px solid purple;
     </div>
 
     <div id="Info">
-        <p> <!-- (<%= company.size %>) -->
-        <% @users.each do |user| %>
+        <p> 
             <strong>User Name:</strong>
-            <span> <%= user.fname %> </span>
+          <span> <%= @user.username %> </span>
         </p>
-        <% end %>
+     
 
         <p>
             <strong>First Name:</strong>
-            <span>Sirjon</span>
+            <span><%= @user.fname %> </span>
         </p>
         <p>
             <strong>Last Name:</strong>
-            <span>Sirjon</span>
+            <span><%= @user.lname %> </span>
         </p>
         <p>
             <strong>Email:</strong>
-            <span>Sirjon</span>
+            <span><%= @user.email %> </span>
         </p>
         <p>
             <strong>gender:</strong>
-            <span>Sirjon</span>
+            <span><%= @user.gender %> </span>
         </p>
 
     </div>
