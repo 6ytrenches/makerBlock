@@ -80,7 +80,7 @@ border: 1px solid purple;
     <div id="LeftCol">
         <div id="Photo"></div>
         <div id="ProfileOptions">
-        a
+        <%=@username %>
         </div>
     </div>
 
@@ -104,10 +104,14 @@ border: 1px solid purple;
             <span> <%=@email%> </span>
         </p>
         <p>
-            <strong>gender:</strong>
+            <strong>Gender:</strong>
             <span> <%=@gender%> </span>
         </p>
 
+            <p>
+            <strong> Comment History: </strong>
+            <span id="infobox"> </span>
+            </p>
     </div>
 
     <!-- Needed because other elements inside ProfilePage have floats -->

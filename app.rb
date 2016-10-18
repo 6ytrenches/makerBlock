@@ -79,6 +79,7 @@ get '/posts' do
 end
 
 post '/posts' do 
+  
   erb :generalPage
 end
 
