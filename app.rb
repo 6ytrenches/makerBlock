@@ -5,6 +5,7 @@ require './models'
 set :database, "sqlite3:uncubed.sqlite3"
 
 $menu = [
+
   {page: 'main', href: './generalPage'},
   {page: 'home', href: './home'}
   ]
@@ -50,18 +51,19 @@ end
 #   erb :company_profile
 # end
 
-
 # ------------------------
 
 
-get '/personal' do 
-
- erb :personal
+get '/user/:id' do 
+  @user = User.find(params[:id])
+  erb :personal
 end
 
-post '/personal' do
+post '/user' do
  erb :personal 
 end
+
+
 #-------------------------
 
 get '/posts' do
