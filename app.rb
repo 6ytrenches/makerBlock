@@ -1,5 +1,6 @@
 require 'sinatra' 
 require 'sinatra/activerecord'
+require 'paperclip'
 require './models'
 require 'sendgrid-ruby'
 
