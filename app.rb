@@ -6,10 +6,10 @@ enable :sessions
 set :database, "sqlite3:microblog.sqlite3"
 
 $menu = [
-
-  {page: 'main', href: './generalPage'},
-  {page: 'home', href: './'},
-  {page: 'personal', href: './personal'}
+  {page: 'Main', href: './generalPage'},
+  {page: 'Home', href: './'},
+  {page: 'Personal', href: './personal'},
+  {page: 'Users', href: './all_users'}
   ]
 #------------------------
 #HOME PAGE  
@@ -58,9 +58,20 @@ end
 #PERSONAL PAGE
 
 get '/personal' do 
+  @users = User.all
   @user = User.find(session[:user_id])
+
   erb :personal
 end
+
+get '/personal/:id' do 
+  @users = User.all
+  # @user = User.find(session[:user_id])
+  @user = User.find(params[:id])
+
+  erb :personal
+end
+
 
 post '/personal' do 
   erb :personal
@@ -75,15 +86,25 @@ get '/generalPage' do
 end
 
 
+
+post '/general' do 
+  c = params["username"]
+  d = User.find_by(username: c)
+  e = d[:id].to_i
+  Post.create(content: params["content"], user_id: e)
+  @comment = Post.first.to_s
+end
+
+
 post '/generalPage' do 
   
   posts_user = User.find_by(username: params[:username])
   
   if !posts_user.nil? 
     e = posts_user[:id].to_i
-  @post = Post.create(content: params[:content], user_id: e)
-  # @posts_name = posts_user.fname.to_s
-  erb :generalPage
+    @post = Post.create(content: params[:content], user_id: e)
+    
+    erb :generalPage
   
   else 
 
@@ -123,4 +144,17 @@ post '/editpersonal' do
   erb :editpersonal
 end
 
-#-------------------------
+
+get "/delete_profile" do
+  @user = User.find(session[:user_id])
+  User.find(@user).destroy
+  redirect "/home"
+end
+#------------------------------------------
+#  ALL_USERS PAGE
+get '/all_users' do
+
+
+@users = User.all
+erb :all_users
+end

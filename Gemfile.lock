@@ -13,9 +13,23 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     concurrent-ruby (1.0.2)
     i18n (0.7.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
     minitest (5.9.1)
+    paperclip (5.0.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -38,6 +52,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  paperclip (~> 5.0.0)
   rake
   sinatra-activerecord
   sqlite3
