@@ -3,21 +3,45 @@ require 'sinatra/activerecord'
 require './models'
 enable :sessions
 
-set :database, "sqlite3:uncubed.sqlite3"
+set :database, "sqlite3:microblog.sqlite3"
 
 $menu = [
-
-  {page: 'main', href: './generalPage'},
-  {page: 'home', href: './home'},
-  {page: 'personal', href: './profile'}
+  {page: 'Main', href: './generalPage'},
+  {page: 'Home', href: './'},
+  {page: 'Personal', href: './personal'},
+  {page: 'Users', href: './all_users'}
   ]
-  
-get '/home' do 
+#------------------------
+#HOME PAGE  
+
+get '/' do 
  erb :home
 end
 
+post '/' do
+  
+   b = User.find_by(email: params[:email]) 
+   p b 
+   p params
+  if !b.nil? && params[:password] == b[:password].to_s
+    session[:user_id] = b.id
+
+  # @confirmation = b[:fname]
+  # @lname = b[:lname]
+  # @username = b[:username]
+  # @gender = b[:gender]
+  # @email = b[:email]
+   
+  redirect ('/personal')
+  else 
+    @error = 'Sorry you are not in our system'
+    erb :home
+  end
+end
 
 #-------------------------
+#REGISTRATION PAGE 
+
 get '/registration' do 
  
  erb :registration
@@ -29,33 +53,32 @@ post '/registration' do
   # @user = @regus.email
   erb :registration
 end
-#-------------------------
 
+#-------------------------
+#PERSONAL PAGE
+
+get '/personal' do 
+  @users = User.all
+  @user = User.find(session[:user_id])
+
+  erb :personal
+end
 
 get '/personal/:id' do 
-  @users = User.find(params[:id])
-  erb :personal
-end
+  @users = User.all
+  # @user = User.find(session[:user_id])
+  @user = User.find(params[:id])
 
-post '/home' do
-  
-  a = params["email"].to_s
-  b = User.find_by(email: a)
-  session[:user_id] = b.id
-
-  @confirmation = b[:fname]
-  @lname = b[:lname]
-  @username = b[:username]
-  @gender = b[:gender]
-  @email = b[:email]
-  
-  # @user = @regus.email
   erb :personal
 end
 
 
+post '/personal' do 
+  erb :personal
+end
 
 #-------------------------
+#GENERAL PAGE WITH ALL POSTS
 
 get '/general' do
   erb :generalPage
@@ -66,15 +89,18 @@ post '/general' do
   c = params["username"]
   d = User.find_by(username: c)
   e = d[:id].to_i
-  Post.create(id: e, content: params["content"])
+  Post.create(content: params["content"], user_id: e)
   @comment = Post.first.to_s
 end
+
 post '/posts' do 
   
   erb :generalPage
 end
 
 #-------------------------
+#UPDATE PERSONAL INFO PAGE 
+
 get '/editpersonal' do
 
   @user = User.find(session[:user_id])
@@ -109,8 +135,10 @@ get "/delete_profile" do
   redirect "/home"
 end
 #------------------------------------------
-
+#  ALL_USERS PAGE
 get '/all_users' do
+
+
 @users = User.all
 erb :all_users
 end
