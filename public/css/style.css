@@ -35,3 +35,11 @@ li {
 
 
 /*end of personal page*/
+
+/*GENERAL PAGE*/
+.pst {
+	width: 30%;
+	height: 20px;
+	margin:10px 10px;
+	text-align: center;
+}

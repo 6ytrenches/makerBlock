@@ -5,4 +5,10 @@
   </form>	
 
 
-  <h3><%= @comment%></h3>
+  
+
+  <div>
+<% Post.all.each do |post| %>
+    <div class="pst"><%= post.content%> </div>
+<% end %>
+  </div>

@@ -69,24 +69,21 @@ end
 #-------------------------
 #GENERAL PAGE WITH ALL POSTS
 
-get '/general' do
-  erb :generalPage
-end
-
-
-post '/general' do 
-  c = params["username"]
-  d = User.find_by(username: c)
-  e = d[:id].to_i
-  Post.create(content: params["content"], user_id: e)
-  @comment = Post.first.to_s
-end
-
-
-post '/posts' do 
+get '/generalPage' do
   
   erb :generalPage
 end
+
+
+post '/generalPage' do 
+  c = params["username"]
+  d = User.find_by(username: c)
+  e = d[:id].to_i
+    Post.create(content: params["content"], user_id: e)
+  
+  erb :generalPage
+end
+
 
 #-------------------------
 #UPDATE PERSONAL INFO PAGE 
