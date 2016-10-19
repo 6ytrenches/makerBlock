@@ -80,9 +80,11 @@ end
 #-------------------------
 #GENERAL PAGE WITH ALL POSTS
 
-get '/general' do
+get '/generalPage' do
+  
   erb :generalPage
 end
+
 
 
 post '/general' do 
@@ -93,10 +95,23 @@ post '/general' do
   @comment = Post.first.to_s
 end
 
-post '/posts' do 
+
+post '/generalPage' do 
   
+  posts_user = User.find_by(username: params[:username])
+  
+  if !posts_user.nil? 
+    e = posts_user[:id].to_i
+    Post.create(content: params[:content], user_id: e)  
   erb :generalPage
+  
+  else 
+
+    redirect ('/registration')
+  
+  end
 end
+
 
 #-------------------------
 #UPDATE PERSONAL INFO PAGE 
