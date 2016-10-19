@@ -7,11 +7,11 @@ set :database, "sqlite3:uncubed.sqlite3"
 $menu = [
 
   {page: 'main', href: './generalPage'},
-  {page: 'home', href: './home'},
-  {page: 'personal', href: './profile'}
+  {page: 'home', href: './'},
+  {page: 'personal', href: './personal'}
   ]
   
-get '/home' do 
+get '/' do 
  erb :home
 end
 
@@ -36,7 +36,7 @@ get '/personal/:id' do
   erb :personal
 end
 
-post '/home' do
+post '/' do
   
   a = params["email"].to_s
   b = User.find_by(email: a)
@@ -47,8 +47,9 @@ post '/home' do
   @gender = b[:gender]
   @email = b[:email]
   
-  # @user = @regus.email
-  erb :personal
+  
+  redirect to('./personal')
+
 end
 
 
@@ -59,17 +60,13 @@ get '/general' do
   erb :generalPage
 end
 
-<<<<<<< HEAD
+
 post '/general' do 
   c = params["username"]
   d = User.find_by(username: c)
   e = d[:id].to_i
-  Post.create(id: e, content: params["content"])
+  Post.create(content: params["content"], user_id: e)
   @comment = Post.first.to_s
-=======
-post '/posts' do 
-  
->>>>>>> 5589160029deedeaf69450e2e6fceaf5dd7f97a4
   erb :generalPage
 end
 
