@@ -4,4 +4,4 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'sqlite3'
 gem 'rake'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
