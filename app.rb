@@ -103,8 +103,9 @@ post '/generalPage' do
   
   if !posts_user.nil? 
     e = posts_user[:id].to_i
-    Post.create(content: params[:content], user_id: e)  
-  erb :generalPage
+    @post = Post.create(content: params[:content], user_id: e)
+    
+    erb :generalPage
   
   else 
 

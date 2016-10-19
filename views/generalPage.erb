@@ -4,11 +4,9 @@
 	  <input id="psb" type="submit" value="Submit" />
   </form>	
 
-
-  
-
   <div>
 <% Post.all.each do |post| %>
-    <div class="pst"><%= post.content%> </div>
+    <div class="pst"><%= post.content %> (<%= post.user.username %>)</div>
 <% end %>
   </div>
+
