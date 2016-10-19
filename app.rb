@@ -8,14 +8,13 @@ set :database, "sqlite3:uncubed.sqlite3"
 $menu = [
 
   {page: 'main', href: './generalPage'},
-  {page: 'home', href: './home'}
+  {page: 'home', href: './home'},
+  {page: 'personal', href: './profile'}
   ]
   
 get '/home' do 
-# @regus = User.find_by(email: @user)
  erb :home
 end
-
 
 
 #-------------------------
@@ -58,10 +57,17 @@ end
 
 #-------------------------
 
-get '/posts' do
-  @posts = Post.all
+get '/general' do
   erb :generalPage
 end
+
+
+post '/general' do 
+  c = params["username"]
+  d = User.find_by(username: c)
+  e = d[:id].to_i
+  Post.create(id: e, content: params["content"])
+  @comment = Post.first.to_s
 
 post '/posts' do 
   
