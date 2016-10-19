@@ -1,6 +1,7 @@
 require 'sinatra' 
 require 'sinatra/activerecord'
 require './models'
+enable :sessions
 
 set :database, "sqlite3:uncubed.sqlite3"
 
@@ -41,6 +42,7 @@ post '/home' do
   
   a = params["email"].to_s
   b = User.find_by(email: a)
+  session[:user_id] = b.id
 
   @confirmation = b[:fname]
   @lname = b[:lname]
@@ -68,15 +70,29 @@ end
 
 #-------------------------
 get '/editpersonal' do
-  erb :editpersonal
-end
 
+  @user = User.find(session[:user_id])
+  @updated = @user[:fname]
+erb :editpersonal
+end
 
 
 post '/editpersonal' do
-  #if user is already in the system. also creating a new user
-  @edited = User.create_with(locked: false).find_or_create_by(params)
 
-  # @user = @regus.email
+  # @edited = User.create_with(locked: false).find_or_create_by(params)
+  @user = User.find(session[:user_id])
+  a = params["email"].to_s
+  c = @user.update(fname: params[:fname])
+  @confirmation = @user[:fname]
+  u = @user.update(username: params[:username])
+  @username  = @user[:username]
+  l = @user.update(lname: params[:lname])
+  @lname  = @user[:lname]
+  e = @user.update(email: params[:email])
+  @email = @user[:email]
+  g = @user.update(gender: params[:gender])
+  @gender = @user[:gender]
+
   erb :editpersonal
 end
+
