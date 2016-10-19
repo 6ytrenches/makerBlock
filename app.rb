@@ -1,6 +1,8 @@
 require 'sinatra' 
 require 'sinatra/activerecord'
 require './models'
+require 'sendgrid-ruby'
+
 enable :sessions
 
 set :database, "sqlite3:microblog.sqlite3"
@@ -25,19 +27,13 @@ post '/' do
    p params
   if !b.nil? && params[:password] == b[:password].to_s
     session[:user_id] = b.id
-
-  # @confirmation = b[:fname]
-  # @lname = b[:lname]
-  # @username = b[:username]
-  # @gender = b[:gender]
-  # @email = b[:email]
-   
   redirect ('/personal')
   else 
     @error = 'Sorry you are not in our system'
     erb :home
   end
 end
+
 
 #-------------------------
 #REGISTRATION PAGE 
@@ -157,4 +153,38 @@ get '/all_users' do
 
 @users = User.all
 erb :all_users
+end
+#------------------------------------------
+# RECOVER PAGE 
+
+
+get '/recover' do
+  erb :recover
+end
+
+
+post '/recover' do 
+ 
+recover_user = User.find_by(email: params[:email]) 
+if /^[^@]+@[^\.]{2,}\.[^\.]{2,}$/ =~ params[:email] && recover_user.email == params[:email]
+mail = SendGrid::Mail.new(
+    SendGrid::Email.new(email:"bayekeshov@gmail.com"),
+    "Thanks for contacting us",
+    SendGrid::Email.new(email: params[:email]),
+    SendGrid::Content.new(type: 'text/plain', value: "Thanks for letting us know that you have problems with logging in.
+
+      Here is your password " + + recover_user.password.to_s + " and username." + " " + recover_user.username 
+
+    )
+  )
+  sg = SendGrid::API.new( api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+  @msg = "Thanks you! Please check your email"
+  erb :recover
+else
+     @msg = "Not a valid email, please re-enter"
+     @error.push( 'email' )
+
+  erb :recover
+end
 end

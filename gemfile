@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'activerecord'
 gem 'sinatra-activerecord'
+gem "sendgrid-ruby"
 gem 'sqlite3'
 gem 'rake'
 gem "paperclip", "~> 5.0.0"

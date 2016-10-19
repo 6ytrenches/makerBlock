@@ -44,4 +44,6 @@ li {
 	vertical-align: center;
 	border: 2px solid black;
 	box-shadow: 0 0 10px grey;
+	background-color: white;
+	margin-left: 37.5%;
 }
