@@ -68,7 +68,7 @@ post '/general' do
   e = d[:id].to_i
   Post.create(id: e, content: params["content"])
   @comment = Post.first.to_s
-
+end
 post '/posts' do 
   
   erb :generalPage
@@ -102,3 +102,15 @@ post '/editpersonal' do
   erb :editpersonal
 end
 
+
+get "/delete_profile" do
+  @user = User.find(session[:user_id])
+  User.find(@user).destroy
+  redirect "/home"
+end
+#------------------------------------------
+
+get '/all_users' do
+@users = User.all
+erb :all_users
+end
