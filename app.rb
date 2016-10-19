@@ -76,12 +76,20 @@ end
 
 
 post '/generalPage' do 
-  c = params["username"]
-  d = User.find_by(username: c)
-  e = d[:id].to_i
-    Post.create(content: params["content"], user_id: e)
+  
+  posts_user = User.find_by(username: params[:username])
+  
+  if !posts_user.nil? 
+    e = posts_user[:id].to_i
+    Post.create(content: params[:content], user_id: e)
   
   erb :generalPage
+  
+  else 
+
+    redirect ('/registration')
+  
+  end
 end
 
 
