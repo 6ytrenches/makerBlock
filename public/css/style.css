@@ -188,3 +188,12 @@ a {
 }
 
 /**/
+
+/*recover page*/
+#recover{
+	display: inline-block;
+	position: absolute;
+	left:570px;
+	margin: 110px auto;
+}
+/*recover end*/
