@@ -125,6 +125,22 @@ a {
 	position: relative;*/
 		margin-top: 20px;
 } 
+
+ #b1, #b2, #b3, #Hb1, #Hb2 {
+    position: relative;
+    right: 10px;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 /*end of editpersonal page*/
 
 
@@ -143,20 +159,14 @@ a {
 
 
 
-/*#editpersonal button*/
- #b1, #b2, #b3, #Hb1, #Hb2 {
-    position: relative;
-    right: 10px;
-    background-color: #4CAF50; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+
+
+/*allusers page*/
+#all_users{
+	display: inline-block;
+	position: absolute;
+	left:570px;
+	margin: 110px auto;
 }
 
-
+/**/
