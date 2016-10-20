@@ -148,7 +148,15 @@ a {
 		margin-top: 20px;
 } 
 
- #b1, #b2, #b3 {
+
+#editpersonal{
+	position: absolute;
+	margin: 150px auto;
+	left: 410px;
+}
+
+ #b1, #b2, #b3, #Rb1 {
+
     position: relative;
     right: 10px;
     background-color: #4CAF50; 
@@ -208,3 +216,22 @@ a {
 }
 
 /**/
+
+/*recover page*/
+#recover{
+	display: inline-block;
+	position: absolute;
+	left:570px;
+	margin: 110px auto;
+}
+/*recover end*/
+
+/*regristration page*/
+#registration{
+	display: inline-block;
+	position: absolute;
+	left:500px;
+	margin: 110px auto;
+
+}
+/*end regristration*/
