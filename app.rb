@@ -9,10 +9,10 @@ enable :sessions
 set :database, "sqlite3:microblog.sqlite3"
 
 $menu = [
-  {page: 'Main', href: './generalPage'},
-  {page: 'Home', href: './'},
-  {page: 'Personal', href: './personal'},
-  {page: 'Users', href: './all_users'}
+  {page: 'Main', href: '/generalPage'},
+  {page: 'Home', href: '/'},
+  {page: 'Personal', href: '/personal'},
+  {page: 'Users', href: '/all_users'}
   ]
 #------------------------
 #HOME PAGE  
