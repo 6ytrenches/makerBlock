@@ -144,7 +144,7 @@ a {
 
 
 /*#editpersonal button*/
- #b1, #b2, #b3 {
+ #b1, #b2, #b3, #Hb1, #Hb2 {
     position: relative;
     right: 10px;
     background-color: #4CAF50; 
