@@ -70,7 +70,7 @@ a {
 	font-size: 13px;
 	position: absolute;
 	top: 260px;
-	left: 500px;
+	left: 480px;
 	
 }
 
@@ -104,11 +104,12 @@ a {
     text-decoration: underline;
 }
 
+/*Registration Form*/
+
 #registration input,  #registration select {
 	margin-top: 20px;
 	
 }
-
 
 #psb {
 	margin-top: 20px;
@@ -120,6 +121,7 @@ a {
 }
 
 /*editpersonal page css*/
+
 #editpersonal input, #editpersonal select {
 /*	top: 100px;
 	position: relative;*/
@@ -129,6 +131,12 @@ a {
 
 
 /*GENERAL PAGE*/
+#postform {
+	position: absolute;
+	top: 100px;
+
+}
+
 .pst {
 	width: 30%;
 	height: 40px;
@@ -138,6 +146,9 @@ a {
 	box-shadow: 0 0 10px grey;
 	background-color: white;
 	margin-left: 37.5%;
+	position: relative;
+	top: 100px;
+	left: 100px;
 }
 /*end of general page*/
 
