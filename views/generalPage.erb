@@ -6,7 +6,7 @@
 
   <div>
 <% Post.all.each do |post| %>
-    <div class="pst"><%= post.content %> (<%= post.user.username %>)</div>
+    <div class="pst"><h3 class="textpost"><%= post.content %> (<%= post.user.username %>)</h3><img class="genimg" src="images/speech-bubble.png"/></div>
 <% end %>
   </div>
 
