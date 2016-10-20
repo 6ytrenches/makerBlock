@@ -33,7 +33,7 @@ body {
 #navbar li  {
 	float: left;
 	display: inline-block;
-	margin: 10px 50px;
+	margin: 10px 130px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -49,11 +49,18 @@ a {
 
 /*Login Form*/
 #lgi1, #lgi2 {
+	width: 150px;
 	height: 15px;
 	border-radius: 10px;
 	text-align: center;
 	outline: none;
+	margin-top: 20px;
+	box-shadow: 0 0 10px black;
 
+}
+
+#lgi1 {
+	margin-left: 25px;
 }
 
 #login {
@@ -61,7 +68,16 @@ a {
 	font-family: 'Open Sans', sans-serif;
 	margin-top: 30px;
 	font-size: 13px;
+	position: absolute;
+	top: 260px;
+	left: 500px;
 	
+}
+
+#logform {
+	color: white;
+	text-shadow: 0 0 10px black;
+
 }
 
 a {
@@ -69,7 +85,8 @@ a {
   }
 
 #lgb {
-	margin-left: 20px;
+	margin-left: 70px;
+	margin-top: 20px;
 	height: 23px;
 	width: 80px;
 	background-color: #590b75;
@@ -77,17 +94,12 @@ a {
 	border-radius: 10px;
 }
 
-#homelog1 {
-	margin-left: 545px;
+.homelog {
+	margin: 0 30px;
 	font-size: 13px;
 }
 
-#homelog2 {
-	margin-left: 140px;
-	font-size: 13px;
-}
-
-#homelog1:hover, #homelog2:hover {
+.homelog:hover {
     color: blue;
     text-decoration: underline;
 }

@@ -15,16 +15,6 @@
       <li><a href="<%= item[:href] %>"><%= item[:page] %></a></li>
       <% end %>
       </ul>
-    
-    <div id="login">
-      <form method="POST">
-        <label>Email: </label><input id="lgi1" name="email" placeholder="Email" />
-        <label>Password: </label><input id="lgi2" type="password" name="password" placeholder="Password" />
-        <input id="lgb" type="submit" value="Log In" />
-      </form><br />
-          <a id="homelog1" href="/recover">Forgot account?</a>
-          <a id="homelog2" href="/registration">Sign Up</a>
-   </div>
 </nav> 
 <%= yield %>
 </body>
