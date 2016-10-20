@@ -135,7 +135,7 @@ a {
 	left: 410px;
 }
 
- #b1, #b2, #b3, #Hb1, #Hb2 {
+ #b1, #b2, #b3, #Hb1, #Hb2, #Rb1 {
     position: relative;
     right: 10px;
     background-color: #4CAF50; 
@@ -197,3 +197,13 @@ a {
 	margin: 110px auto;
 }
 /*recover end*/
+
+/*regristration page*/
+#registration{
+	display: inline-block;
+	position: absolute;
+	left:500px;
+	margin: 110px auto;
+
+}
+/*end regristration*/
