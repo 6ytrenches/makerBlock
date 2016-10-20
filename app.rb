@@ -22,7 +22,7 @@ get '/' do
 end
 
 post '/' do
-  
+
    b = User.find_by(email: params[:email]) 
    p b 
    p params
@@ -31,6 +31,7 @@ post '/' do
   redirect ('/personal')
   else 
     @error = 'Sorry you are not in our system'
+    @error2 = "<img src='http://arcanumclub.ru/smiles/smile2.gif'>"
     erb :home
   end
 end
