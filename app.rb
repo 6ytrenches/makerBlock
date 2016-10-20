@@ -57,7 +57,6 @@ end
 get '/personal' do 
   @users = User.all
   @user = User.find(session[:user_id])
-
   erb :personal
 end
 
@@ -78,7 +77,6 @@ end
 #GENERAL PAGE WITH ALL POSTS
 
 get '/generalPage' do
-  
   erb :generalPage
 end
 
@@ -106,7 +104,6 @@ end
 #UPDATE PERSONAL INFO PAGE 
 
 get '/editpersonal' do
-
   @user = User.find(session[:user_id])
   @updated = @user[:fname]
 erb :editpersonal
@@ -136,7 +133,6 @@ end
 get "/delete_profile" do
   @user = User.find(session[:user_id])
   User.find(@user).destroy
-
   redirect './'
 end
 
@@ -148,10 +144,8 @@ get "/logout" do
 #------------------------------------------
 #  ALL_USERS PAGE
 get '/all_users' do
-
-
-@users = User.all
-erb :all_users
+  @users = User.all
+  erb :all_users
 end
 #------------------------------------------
 # RECOVER PAGE 
@@ -163,10 +157,9 @@ end
 
 
 post '/recover' do 
- 
-recover_user = User.find_by(email: params[:email]) 
-if /^[^@]+@[^\.]{2,}\.[^\.]{2,}$/ =~ params[:email] && recover_user.email == params[:email]
-mail = SendGrid::Mail.new(
+  recover_user = User.find_by(email: params[:email]) 
+  if /^[^@]+@[^\.]{2,}\.[^\.]{2,}$/ =~ params[:email] && recover_user.email == params[:email]
+  mail = SendGrid::Mail.new(
     SendGrid::Email.new(email:"bayekeshov@gmail.com"),
     "Thanks for contacting us",
     SendGrid::Email.new(email: params[:email]),

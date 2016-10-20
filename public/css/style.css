@@ -107,14 +107,14 @@ a {
 	margin-bottom: 20px;
 }
 
-/*personal page css*/
+/*editpersonal page css*/
 #editpersonal input, #editpersonal select {
+/*	top: 100px;
+	position: relative;*/
 		margin-top: 20px;
-
 } 
+/*end of editpersonal page*/
 
-
-/*end of personal page*/
 
 /*GENERAL PAGE*/
 .pst {
@@ -127,3 +127,24 @@ a {
 	background-color: white;
 	margin-left: 37.5%;
 }
+/*end of general page*/
+
+
+
+/*#editpersonal button*/
+ #b1, #b2, #b3 {
+    position: relative;
+    right: 10px;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
