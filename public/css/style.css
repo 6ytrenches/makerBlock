@@ -129,6 +129,12 @@ a {
 		margin-top: 20px;
 } 
 
+#editpersonal{
+	position: absolute;
+	margin: 150px auto;
+	left: 410px;
+}
+
  #b1, #b2, #b3, #Hb1, #Hb2 {
     position: relative;
     right: 10px;
