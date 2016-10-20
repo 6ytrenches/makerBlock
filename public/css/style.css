@@ -11,6 +11,10 @@ li {
 	text-align: center;
 }
 
+a {
+    text-decoration: none;
+  }
+
 #lgb {
 	margin-top: 30px;
 	margin-bottom: 30px;
@@ -32,6 +36,10 @@ li {
 }
 
 /*personal page css*/
+#editpersonal input, #editpersonal select {
+		margin-top: 20px;
+
+} 
 
 
 /*end of personal page*/

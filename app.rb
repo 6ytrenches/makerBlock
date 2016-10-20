@@ -145,8 +145,14 @@ end
 get "/delete_profile" do
   @user = User.find(session[:user_id])
   User.find(@user).destroy
-  redirect "/home"
+  redirect ('./')
 end
+
+
+get "/logout" do
+  session.destroy
+  redirect './'
+  end
 #------------------------------------------
 #  ALL_USERS PAGE
 get '/all_users' do
