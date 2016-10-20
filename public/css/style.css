@@ -284,12 +284,53 @@ a {
 /**/
 
 /*recover page*/
+
+#recovermain {
+	position: relative;
+	width: 100%;
+	min-height: 700px;
+	margin: 0;
+	background-image: url("/images/recover.jpg");
+	color: #420b75;
+}
+
 #recover{
 	display: inline-block;
 	position: absolute;
-	left:570px;
-	margin: 110px auto;
+	left:500px;
+	margin: 300px auto;
 }
+
+#rcin {
+	width: 150px;
+	height: 20px;
+	outline: none;
+	text-align: center;
+}
+
+#msg {
+	position: absolute;
+	top: 580px;
+	left: 450px;
+	color: #420b75;
+	
+}
+
+#lgb1 {
+	margin-left: 124px;
+	margin-top: 20px;
+	height: 23px;
+	width: 80px;
+	background-color: #f7e51b;
+	color: #420b75;
+	cursor: pointer;
+}
+
+#lgb1:hover {
+	background-color: #bfc120;
+}
+
+
 /*recover end*/
 
 /*regristration page*/
