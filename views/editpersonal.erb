@@ -1,13 +1,13 @@
 <div id="editpersonals">
 <h2>Edit Your Profile</h2>
   <form method="POST" action="/editpersonal">
-    <label>First Name</label><input name="fname" /><br />
-    <label>Last Name</label><input name="lname" /><br />
-    <label>Email</label><input name="email" /><br />
-    <label>Username</label><input name="username" /><br />
-    <label>Password</label><input name="password" /><br />
-    <label>DOB</label><input name="bob" /><br />
-    <label>Gender</label>
+    <label>First Name: </label><input name="fname" /><br />
+    <label>Last Name: </label><input name="lname" /><br />
+    <label>Email: </label><input name="email" /><br />
+    <label>Username: </label><input name="username" /><br />
+    <label>Password: </label><input name="password" /><br />
+    <label>DOB: </label><input name="bob" /><br />
+    <label>Gender: </label>
       <select name="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -16,7 +16,7 @@
   </form>
 </div>
 
-<button> <a href="/delete_profile">Yes, delete my profile</a></button>
+<button><a href="/delete_profile">Yes, delete my profile</a></button>
 
 <h1>
   <%= @updated %>

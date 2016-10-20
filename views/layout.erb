@@ -3,19 +3,29 @@
 <head>
 	<meta charset="utf-8">
   <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </head>
 <body>
-		<nav>
+		<nav id="navbar">
       <ul>
       <% $menu.each do |item| %>
       <li><a href="<%= item[:href] %>"><%= item[:page] %></a></li>
       <% end %>
       </ul>
-    </nav> 
-
+    
+    <div id="login">
+      <form method="POST">
+        <label>Email: </label><input id="lgi1" name="email" placeholder="Email" />
+        <label>Password: </label><input id="lgi2" type="password" name="password" placeholder="Password" />
+        <input id="lgb" type="submit" value="Log In" />
+      </form><br />
+          <a id="homelog1" href="/recover">Forgot account?</a>
+          <a id="homelog2" href="/registration">Sign Up</a>
+   </div>
+</nav> 
 <%= yield %>
 </body>
 </html>

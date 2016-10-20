@@ -47,7 +47,7 @@ end
 post '/registration' do
   #if user is already in the system. also creating a new user
   @regus = User.create_with(locked: false).find_or_create_by(params)
-  # @user = @regus.email
+  
   erb :registration
 end
 
@@ -82,15 +82,6 @@ get '/generalPage' do
   erb :generalPage
 end
 
-
-
-post '/general' do 
-  c = params["username"]
-  d = User.find_by(username: c)
-  e = d[:id].to_i
-  Post.create(content: params["content"], user_id: e)
-  @comment = Post.first.to_s
-end
 
 
 post '/generalPage' do 
@@ -145,7 +136,7 @@ end
 get "/delete_profile" do
   @user = User.find(session[:user_id])
   User.find(@user).destroy
-  redirect "/home"
+  redirect './'
 end
 #------------------------------------------
 #  ALL_USERS PAGE

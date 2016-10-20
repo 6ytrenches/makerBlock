@@ -1,19 +1,91 @@
 body {
-	background-color: rgb(204, 210, 221);
 	text-align: center;
+	margin: 0;
+
 }
-li {
+/*Home Page Background*/
+#imagegallery img {
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: 0;
+
+}
+
+.rotatingimage {
+	display: none;
+	position: absolute;
+}
+
+/*nav bar*/
+
+#navbar {
+	background-color: white;
+	position: fixed;
+	width: 100%;
+	padding-bottom: 20px;
+	margin-top: 0px;
+	z-index: 1;
+	opacity: 0.8;
+
+}
+
+#navbar li  {
+	float: left;
 	display: inline-block;
+	margin: 10px 50px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+		text-decoration: none;
+		outline: none;
+}
+
+#navbar li a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/*Login Form*/
+#lgi1, #lgi2 {
+	height: 15px;
+	border-radius: 10px;
+	text-align: center;
+	outline: none;
+
 }
 
 #login {
-	margin-top: 100px;
 	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 30px;
+	font-size: 13px;
+	
 }
 
 #lgb {
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-left: 20px;
+	height: 23px;
+	width: 80px;
+	background-color: #590b75;
+	color: white;
+	border-radius: 10px;
+}
+
+#homelog1 {
+	margin-left: 545px;
+	font-size: 13px;
+}
+
+#homelog2 {
+	margin-left: 140px;
+	font-size: 13px;
+}
+
+#homelog1:hover, #homelog2:hover {
+    color: blue;
+    text-decoration: underline;
 }
 
 #registration input,  #registration select {
@@ -42,7 +114,7 @@ li {
 	height: 40px;
 	margin:10px 10px;
 	vertical-align: center;
-	border: 2px solid black;
+	border: 1px solid black;
 	box-shadow: 0 0 10px grey;
 	background-color: white;
 	margin-left: 37.5%;

@@ -5,8 +5,5 @@ gem 'sinatra-activerecord'
 gem "sendgrid-ruby"
 gem 'sqlite3'
 gem 'rake'
-<<<<<<< HEAD
-gem "paperclip", "~> 5.0.0"
-=======
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
->>>>>>> e4c8ef09846c57b8d8389f56ddb39bebe6c5ad48
+
