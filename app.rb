@@ -89,7 +89,7 @@ post '/generalPage' do
   
   if !posts_user.nil? 
     e = posts_user[:id].to_i
-    @post = Post.create(content: params[:content], user_id: e)
+    @post = Post.create(content: params[:content], user_id: e) 
     
     erb :generalPage
   
@@ -172,7 +172,7 @@ post '/recover' do
   )
   sg = SendGrid::API.new( api_key: ENV['SENDGRID_API_KEY'])
     response = sg.client.mail._('send').post(request_body: mail.to_json)
-  @msg = "Thanks you! Please check your email"
+  @msg = "Thank you! Please check your email"
   erb :recover
 else
      @msg = "Not a valid email, please re-enter"

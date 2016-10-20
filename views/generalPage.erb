@@ -1,12 +1,12 @@
+<div id="general">
 <form id="postform" method="POST">
-	  <label>Username: </label><input id="puser" name="username" placeholder="username" /><br />
-	  <label>Comment: </label><textarea rows="12" cols="60" name="content" placeholder="Please, enter your commet" /></textarea><br />
+	  <label id="plus">Username: </label><input id="puser" name="username" placeholder="username" /><br />
+	  <label id="plab">Comment: </label><textarea id="ptext" rows="12" cols="60" name="content" placeholder="Please, enter your comment" /></textarea><br />
 	  <input id="psb" type="submit" value="Submit" />
   </form>	
-
   <div>
 <% Post.all.each do |post| %>
     <div class="pst"><h3 class="textpost"><%= post.content %> (<%= post.user.username %>)</h3><img class="genimg" src="images/speech-bubble.png"/></div>
 <% end %>
   </div>
-
+</div>
