@@ -64,6 +64,10 @@ a {
 	
 }
 
+a {
+    text-decoration: none;
+  }
+
 #lgb {
 	margin-left: 20px;
 	height: 23px;
@@ -104,6 +108,10 @@ a {
 }
 
 /*personal page css*/
+#editpersonal input, #editpersonal select {
+		margin-top: 20px;
+
+} 
 
 
 /*end of personal page*/
