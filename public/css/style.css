@@ -140,24 +140,60 @@ a {
 }
 
 
-/*editpersonal page css*/
+/*editpersonal page css && registration page*/
 
-#editpersonal input, #editpersonal select {
-
-		margin-top: 20px;
+#editpersonal input, #editpersonal select, #registration input, #registration input{
+	margin-top: 20px;
 } 
+#editpersonal select, #registration select {
+	margin-left: 0 20px;
+	outline: none;
+	box-shadow: 0 0 5px grey;
+}
 
+#editpersonal label, #registration label {
+	color: white;  
+
+}	
+#editpersonal h1 {
+	margin: 0;
+	position: absolute;
+	top: 100px;
+	left: 500px;
+	text-transform: uppercase;
+	color: purple;
+	text-shadow: 0 0 10px white;
+	opacity: 0.8;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+#editpersonal h2 {
+	margin: 0;
+	position: absolute;
+	top: 150px;
+	left: 580px;
+	color: purple;
+	text-shadow: 0 0 10px white;
+	opacity: 0.8;
+	font-family: 'Open Sans', sans-serif;
+
+
+}
 
 #editpersonal{
+	width: 100%;
+	min-height: 700px;
 	position: relative;
-	top: 100px;
+	background-image: url("/images/editpersonal.jpg");
+	background-size: cover;
 	
 }
 
  #b1, #b2, #b3, #Rb1 {
 
     position: relative;
-    right: 10px;
+    top: 10px;
     background-color: #4CAF50; 
     border: none;
     color: white;
@@ -171,26 +207,59 @@ a {
     text-transform: uppercase;
 }
 
-#b1:hover, #b2:hover, #b3:hover {
+#Rb1 {
+	left: 35px;
+}
+
+
+#b1:hover, #b2:hover, #b3:hover, #Rb1:hover {
 	opacity: 0.7;
 }
 .button {
 	color:white;
 }
 
-#editform {
+#editform, #regform {
 	position: absolute;
+	top: 190px;
+	left: 350px;
 
 	
 }
 
-#editform input {
+#editfn, #editln, #editem, #editps, #editun, #editbob, #regfn, #regln, #regemail, #regun, #regbob, #regps {
+	width: 200px;
+	height: 20px;
 	outline: none;
 	text-align: center;
+	border: 1px solid black;
+
+}
+#editform ::-webkit-input-placeholder, #regform ::-webkit-input-placeholder {
+	color: grey;
+	opacity: 0.8;
+	font-size: 15px;
 }
 
+#editem, #regemail {
+	margin-left: 30px;
+}
 
+#editun, #regun {
+	margin-left: 5px;
+}
 
+#editps {
+	margin-left: 8px;
+}
+
+#regps {
+	margin-right: 80px;
+}
+
+#editbob, #regbob {
+	margin-left: 37px;
+}
 /*end of editpersonal page*/
 
 
@@ -349,9 +418,12 @@ a {
 /*regristration page*/
 #registration{
 	display: inline-block;
-	position: absolute;
-	left:500px;
-	margin: 110px auto;
-
+	width: 100%;
+	min-height: 700px;
+	position: relative;
+	background-image: url("/images/editpersonal.jpg");
+	background-size: cover;
+	
 }
+
 /*end regristration*/

@@ -1,27 +1,21 @@
 <div id="editpersonal">
-<h1>
-  <%= @updated %>
-</h1>
+<h1><%= @updated %></h1>
 <h2>Edit Your Profile</h2>
   <form id="editform" method="POST" action="/editpersonal">
   
-      <label>First Name: </label><input name="fname" placeholder="<%=@user.fname%>" /><br />
-      <label>Last Name: </label><input name="lname" placeholder="<%=@user.lname%>" /><br />
-      <label>Email: </label><input name="email" placeholder="<%=@user.email%>" /><br />
-      <label>Username: </label><input name="username" placeholder="<%=@user.username%>" /><br />
-      <label>Password: </label><input type="password" name="password" placeholder="<%=@user.password%>" /><br />
-      <label>DOB: </label><input name="bob" placeholder="<%=@user.bob%>" /><br />
+      <label>First Name: </label><input id="editfn" name="fname" placeholder="<%=@user.fname%>" /><br />
+      <label>Last Name: </label><input id="editln" name="lname" placeholder="<%=@user.lname%>" /><br />
+      <label>Email: </label><input id="editem" name="email" placeholder="<%=@user.email%>" /><br />
+      <label>Username: </label><input id="editun" name="username" placeholder="<%=@user.username%>" /><br />
+      <label>Password: </label><input id="editps" type="password" name="password" placeholder="<%=@user.password%>" /><br />
+      <label>DOB: </label><input id="editbob" name="bob" placeholder="<%=@user.bob%>" /><br />
       <label>Gender: </label>
         <select name="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select><br />
-      <input id= 'b3' type="submit" value="EDIT" />
+      <input id='b3' type="submit" value="EDIT"/>
       <button id='b1'><a class="button" href="/delete_profile">Yes, delete my profile</a></button>
       <button id='b2'><a class="button" href="/logout">Yes, log out</a></button>
-
   </form>
-</div>
-
-
-
+  </div>  
