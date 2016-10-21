@@ -22,7 +22,7 @@ get '/' do
 end
 
 post '/' do
-  
+
    b = User.find_by(email: params[:email]) 
    p b 
    p params
@@ -48,7 +48,7 @@ end
 post '/registration' do
   #if user is already in the system. also creating a new user
   @regus = User.create_with(locked: false).find_or_create_by(params)
-  
+  redirect ('./')
   erb :registration
 end
 
