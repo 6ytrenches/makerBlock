@@ -399,17 +399,17 @@ a {
 }
 
 #lgb1 {
-	margin-left: 124px;
-	margin-top: 20px;
+	margin-left: 20px;
+	margin-top: 19px;
 	height: 23px;
 	width: 80px;
-	background-color: #f7e51b;
-	color: #420b75;
+	background-color: #590b75;
+	color: white;
 	cursor: pointer;
 }
 
 #lgb1:hover {
-	background-color: #bfc120;
+	background-color: #8844b5;
 }
 
 
