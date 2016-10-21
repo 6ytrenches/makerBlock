@@ -363,6 +363,21 @@ a {
 	margin: 110px auto;
 }
 
+#mainall_users {
+width: 100%;
+min-height: 700px;
+position: relative;
+background-image: url("/images/all_users.jpg");
+}
+
+#all_users li  {
+	color: white;
+	font-size
+}
+
+#all_users ul a {
+	color: white;
+}
 /**/
 
 /*recover page*/
