@@ -4,7 +4,8 @@
 	 	<img class="rotatingimage" src="images/people1.jpg">
 	 	<img class="rotatingimage" src="images/people2.jpeg">
 	 	<img class="rotatingimage" src="images/join.jpg">
-
+<!-- <%= current_user %> -->
+<% if !current_user %>
 <div id="login">
 	<form id="logform" method="POST">
 	  <label>Email: </label><input id="lgi1" name="email" placeholder="email" /><br />
@@ -18,3 +19,8 @@
 
 <h2 id="error_message"><%= @error%><%= @error2%></h2>
 
+<% else %>
+
+<h2 id="greeting">Welcome <%= current_user.fname %> <%= current_user.lname %></h2>
+
+<% end %>

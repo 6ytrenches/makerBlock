@@ -16,6 +16,7 @@
       <% $menu.each do |item| %>
       <li><a  href="<%= item[:href] %>"><%= item[:page] %></a></li>
       <% end %>
+      <li><%= @greeting%></li>
       </ul>
 </nav> 
 <%= yield %>
