@@ -25,5 +25,7 @@ var imageRotator = {
 imageRotator.initialze();
 
 
+
 });
+
 
