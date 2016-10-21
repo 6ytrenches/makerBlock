@@ -32,7 +32,6 @@ body {
 	background-color: white;
 	position: fixed;
 	width: 100%;
-	padding-bottom: 20px;
 	margin-top: 0px;
 	z-index: 1;
 	opacity: 0.8;
@@ -352,7 +351,7 @@ a {
 
 #general {
 	width: 100%;
-	min-height: 900px;
+	min-height: 750px;
 	height: auto;
 	background-image: url("/images/general.jpg");
 	position: relative;
@@ -374,15 +373,24 @@ a {
 
 #mainall_users {
 width: 100%;
-min-height: 700px;
+min-height: 750px;
 position: relative;
 background-image: url("/images/all_users.jpg");
 }
 
 #all_users li  {
 	color: white;
-	font-size
+	font-size:20px;
+	text-transform: uppercase;
+
 }
+
+#all_users li:hover, #all_users ul a:hover {
+	color: #3f0a68;
+	cursor: pointer;
+	text-shadow: 0 0 10px white;
+}
+
 
 #all_users ul a {
 	color: white;

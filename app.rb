@@ -187,6 +187,7 @@ helpers do
     if session[:user_id]
       User.find(session[:user_id])
     end
+    else
   end
 end
 
