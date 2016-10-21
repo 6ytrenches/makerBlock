@@ -167,7 +167,7 @@ a {
 	margin: 0;
 	position: absolute;
 	top: 100px;
-	left: 500px;
+	left: 570px;
 	text-transform: uppercase;
 	color: #3f0a68;
 	text-shadow: 0 0 10px white;
@@ -191,7 +191,7 @@ a {
 
 #editpersonal{
 	width: 100%;
-	min-height: 700px;
+	min-height: 750px;
 	position: relative;
 	background-image: url("/images/editpersonal.jpg");
 	background-size: cover;
@@ -214,6 +214,11 @@ a {
     cursor: pointer;
     text-transform: uppercase;
 }
+
+#b1, #b2, #b3 {
+	left: 50px;
+}
+
 
 #Rb1 {
 	left: 35px;
@@ -463,7 +468,7 @@ background-image: url("/images/all_users.jpg");
 #registration{
 	display: inline-block;
 	width: 100%;
-	min-height: 700px;
+	min-height: 750px;
 	position: relative;
 	background-image: url("/images/editpersonal.jpg");
 	background-size: cover;

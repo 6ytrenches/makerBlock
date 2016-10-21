@@ -2,9 +2,11 @@
 #ProfilePagestyle{
   position: relative;
   width: 100%;
-  min-height: 700px;
+  min-height: 750px;
   margin: 0;
-  background-color: #b3caef;
+  background-image: url("/images/personal.jpg");
+  background-size: cover;
+
 }
 
 
@@ -29,11 +31,14 @@
     /* Move it off the top of the page, then centre it horizontally */
     position: absolute;
     left: 290px;
-    margin: 150px auto;
+    margin: 250px auto;
     width: 635px;
+    padding: 10px 10px;
+    color: white;
+    text-shadow: 0 0 10px black;
 
 /* For visibility. Delete me */
-border: 1px solid red;
+border: 1px solid white;
 }
 
 #LeftCol
@@ -46,20 +51,19 @@ border: 1px solid red;
 
     /* Move it away from the content */
     margin-right: 20px;
-
-/* For visibility. Delete me */
-border: 1px solid brown;
+/*
+ For visibility. Delete me 
+border: 1px solid brown;*/
 }
 
 #Photo
 {
-    background-image: url("https://theinfosphere.org/images/thumb/1/11/Roberto.jpg/240px-Roberto.jpg");
+    background-image: url("/images/profile.png");
+    background-size: cover;
     /* Width and height of photo container */
     width: 200px;
     height: 200px;
 
-/* For visibility. Delete me */
-border: 1px solid green;
 }
 
 #PhotoOptions
@@ -67,8 +71,6 @@ border: 1px solid green;
     text-align: center;
     width: 200px;
 
-/* For visibility. Delete me */
-border: 1px solid brown;
 }
 
 #Info
@@ -80,7 +82,7 @@ border: 1px solid brown;
     float: right;
 
 /* For visibility. Delete me */
-border: 1px solid blue;
+    border: 1px solid white;
 }
 
 #Info strong
@@ -89,8 +91,8 @@ border: 1px solid blue;
     display: inline-block;
     width: 100px;
 
-/* For visibility. Delete me */
-border: 1px solid orange;
+/* For visibility. Delete me 
+border: 1px solid orange;*/
 }
 
 #Info span
@@ -98,9 +100,12 @@ border: 1px solid orange;
     /* Give it a width */
     display: inline-block;
     width: 250px;
+    color: #3f0a68;
+    text-shadow: 0 0 10px white;
+    text-transform: uppercase;
 
 /* For visibility. Delete me */
-border: 1px solid purple;
+border: 1px solid white;
 }
 </style>
 <div id='ProfilePagestyle'>
@@ -133,7 +138,7 @@ border: 1px solid purple;
         </p>
         <p>
             <strong>Gender:</strong>
-            <span> <%=@user.gender%> </span>
+            <span> <%=@user.gender %> </span>
         </p>
 
             <p>
