@@ -221,7 +221,7 @@ a {
 
 
 #Rb1 {
-	left: 35px;
+	left: 47px;
 }
 
 
@@ -232,12 +232,18 @@ a {
 	color:white;
 }
 
-#editform, #regform {
+#editform {
 	position: absolute;
 	top: 190px;
 	left: 350px;
 
 	
+}
+
+#regform {
+	position: absolute;
+	top: 190px;
+	left: 390px;
 }
 
 #editfn, #editln, #editem, #editps, #editun, #editbob, #regfn, #regln, #regemail, #regun, #regbob, #regps {
