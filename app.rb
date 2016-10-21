@@ -9,8 +9,8 @@ enable :sessions
 set :database, "sqlite3:microblog.sqlite3"
 
 $menu = [
-  {page: 'Main', href: '/generalPage'},
   {page: 'Home', href: '/'},
+  {page: 'Posts', href: '/generalPage'},
   {page: 'Personal', href: '/personal'},
   {page: 'Users', href: '/all_users'}
   ]
@@ -106,7 +106,7 @@ end
 
 get '/editpersonal' do
   @user = User.find(session[:user_id])
-  @updated = @user[:fname]
+  @updated = @user[:fname] + " " + @user[:lname]
 erb :editpersonal
 end
 
