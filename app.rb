@@ -58,14 +58,18 @@ end
 get '/personal' do 
   @users = User.all
   @user = User.find(session[:user_id])
+  if !@user.nil?
+  p @user
   erb :personal
+else 
+  redirect ('/registration')
+end
 end
 
 get '/personal/:id' do 
   @users = User.all
   # @user = User.find(session[:user_id])
   @user = User.find(params[:id])
-
   erb :personal
 end
 
@@ -139,7 +143,7 @@ end
 
 
 get "/logout" do
-  session.clear
+  session.destroy
   redirect './'
   end
 #------------------------------------------

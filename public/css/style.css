@@ -166,12 +166,12 @@ a {
 #editpersonal h1 {
 	margin: 0;
 	position: absolute;
-	top: 100px;
-	left: 570px;
+	top: 610px;
+	left: 90px;
 	text-transform: uppercase;
-	color: #3f0a68;
-	text-shadow: 0 0 10px white;
-	opacity: 0.8;
+	color: white;
+	text-shadowadow: 0 0 10px white;
+	opacity: 0.5;
 	font-family: 'Open Sans', sans-serif;
 
 }
@@ -181,8 +181,8 @@ a {
 	position: absolute;
 	top: 150px;
 	left: 580px;
-	color: #3f0a68;
-	text-shadow: 0 0 10px white;
+	color: white;
+	text-shadow: 0 0 20px black;
 	opacity: 0.8;
 	font-family: 'Open Sans', sans-serif;
 
@@ -235,7 +235,7 @@ a {
 #editform {
 	position: absolute;
 	top: 190px;
-	left: 350px;
+	left: 390px;
 
 	
 }
@@ -350,7 +350,7 @@ a {
 
 .textpost {
 	position: absolute;
-	top: 100px;
+	top: 50px;
 	left: 110px;
 	font-family: 'Architects Daughter', cursive;
 }
@@ -378,7 +378,7 @@ a {
 #all_users{
 	display: inline-block;
 	position: absolute;
-	left:570px;
+	left:530px;
 	margin: 110px auto;
 }
 
@@ -387,19 +387,19 @@ width: 100%;
 min-height: 750px;
 position: relative;
 background-image: url("/images/all_users.jpg");
+background-size: cover;
 }
 
 #all_users li  {
-	color: white;
-	font-size:20px;
+	color: rgba(255,255,255, 0.5);
+	font-size:25px;
 	text-transform: uppercase;
 
 }
 
-#all_users li:hover, #all_users ul a:hover {
-	color: #3f0a68;
+#all_users ul a:hover {
 	cursor: pointer;
-	text-shadow: 0 0 10px white;
+	font-size: 35px;
 }
 
 
@@ -411,10 +411,10 @@ background-image: url("/images/all_users.jpg");
 #allu  {
 	margin: 0;
 	text-transform: uppercase;
-	color: #3f0a68;
-	text-shadow: 0 0 10px white;
+	color: white;
 	opacity: 0.8;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 50px;
 
 }
 
