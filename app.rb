@@ -56,9 +56,10 @@ end
 #PERSONAL PAGE
 
 get '/personal' do 
-  @users = User.all
+  
+  
+  if session[:user_id]
   @user = User.find(session[:user_id])
-  if !@user.nil?
   p @user
   erb :personal
 else 
@@ -143,7 +144,7 @@ end
 
 
 get "/logout" do
-  session.destroy
+  session[:user_id] = nil
   redirect './'
   end
 #------------------------------------------
@@ -189,7 +190,10 @@ end
 helpers do
   def current_user 
     if session[:user_id]
-      User.find(session[:user_id])
+       User.find(session[:user_id])
+       
+     else
+      return false
     end
   end
 end

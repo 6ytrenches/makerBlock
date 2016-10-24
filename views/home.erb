@@ -5,7 +5,7 @@
 	 	<img class="rotatingimage" src="images/people2.jpeg">
 	 	<img class="rotatingimage" src="images/join.jpg">
 <!-- <%= current_user %> -->
-<% if !current_user %>
+<% if current_user == false %>
 <div id="login">
 	<form id="logform" method="POST">
 	  <label>Email: </label><input id="lgi1" name="email" placeholder="email" /><br />
