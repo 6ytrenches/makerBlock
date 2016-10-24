@@ -318,7 +318,7 @@ a {
 	text-align: center;
 	outline: none;
 	border: 1px solid black;
-	
+	font-family: 'Open Sans', sans-serif;
 }
 
 #ptext {
@@ -326,12 +326,12 @@ a {
 	text-transform: uppercase;
 	text-align: center;
 	outline: none;
-	
+	font-family: 'Open Sans', sans-serif;
 }
 
 #plab {
 	position: relative;
-	top: -140px;
+	top: -160px;
 	color: white;
 	opacity: 0.9;
 }
@@ -352,7 +352,7 @@ a {
 	position: absolute;
 	top: 50px;
 	left: 110px;
-
+	font-family: 'Open Sans', sans-serif;
 }
 
 .genimg {
