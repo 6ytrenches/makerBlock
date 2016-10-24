@@ -193,7 +193,7 @@ a {
 	width: 100%;
 	min-height: 750px;
 	position: relative;
-	background-image: url("/images/editpersonal.jpg");
+	background-image: url("/images/editpersonal.png");
 	background-size: cover;
 	
 }
@@ -295,7 +295,7 @@ a {
 		position: relative;
     background-color: #4CAF50; 
     border: none;
-    left: 87px;
+    left: 40px;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -310,7 +310,7 @@ a {
 }
 
 #puser {
-	width: 315px;
+	width: 378px;
 	height: 30px;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -318,7 +318,7 @@ a {
 	text-align: center;
 	outline: none;
 	border: 1px solid black;
-	font-family: 'Architects Daughter', cursive;
+	
 }
 
 #ptext {
@@ -326,12 +326,12 @@ a {
 	text-transform: uppercase;
 	text-align: center;
 	outline: none;
-	font-family: 'Architects Daughter', cursive;
+	
 }
 
 #plab {
 	position: relative;
-	top: -170px;
+	top: -140px;
 	color: white;
 	opacity: 0.9;
 }
@@ -352,7 +352,7 @@ a {
 	position: absolute;
 	top: 50px;
 	left: 110px;
-	font-family: 'Architects Daughter', cursive;
+
 }
 
 .genimg {
@@ -364,7 +364,7 @@ a {
 	width: 100%;
 	min-height: 750px;
 	height: auto;
-	background-image: url("/images/general.jpg");
+	background-color: #2d5699;
 	position: relative;
 }
 
@@ -386,8 +386,7 @@ a {
 width: 100%;
 min-height: 750px;
 position: relative;
-background-image: url("/images/all_users.jpg");
-background-size: cover;
+background-color: #2d5699;
 }
 
 #all_users li  {
@@ -476,7 +475,7 @@ background-size: cover;
 	width: 100%;
 	min-height: 750px;
 	position: relative;
-	background-image: url("/images/editpersonal.jpg");
+	background-image: url("/images/editpersonal.png");
 	background-size: cover;
 	
 }
