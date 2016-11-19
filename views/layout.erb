@@ -11,14 +11,24 @@
 	<script type="text/javascript" src="/main.js"></script>
 </head>
 <body>
-		<nav id="navbar">
-      <ul>
-      <% $menu.each do |item| %>
-      <li><a  href="<%= item[:href] %>"><%= item[:page] %></a></li>
+ <% if current_user == false %> 
+ <nav id="navbar">
+    <ul>
+      <% $menu_2.each do |item| %>
+        <li><a  href="<%= item[:href] %>"><%= item[:page] %></a></li>
       <% end %>
-      <li><%= @greeting%></li>
-      </ul>
-</nav> 
+    </ul>
+  </nav>
+ <% else %>
+  <nav id="navbar">
+    <ul>
+      <% $menu.each do |item| %>
+        <li><a  href="<%= item[:href] %>"><%= item[:page] %></a></li>
+      <% end %>
+        <li><%= @greeting%></li>
+    </ul>
+  </nav>
+  <% end %>
 <%= yield %>
 </body>
 </html>

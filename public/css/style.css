@@ -41,13 +41,14 @@ body {
 #navbar li  {
 	float: left;
 	display: inline-block;
-	margin: 10px 130px;
+	margin: 10px 95px;
 	font-family: 'Open Sans', sans-serif;
 }
 
 a {
 		text-decoration: none;
 		outline: none;
+
 }
 
 #navbar li a:hover {
@@ -85,7 +86,7 @@ a {
 #logform {
 	color: white;
 	text-shadow: 0 0 10px black;
-
+	margin-left: 100px;
 }
 
 a {

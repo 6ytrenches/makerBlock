@@ -12,7 +12,15 @@ $menu = [
   {page: 'Home', href: '/'},
   {page: 'Posts', href: '/generalPage'},
   {page: 'Personal', href: '/personal'},
-  {page: 'Users', href: '/all_users'}
+  {page: 'Users', href: '/all_users'},
+  {page: 'Logout', href: '/logout'}
+  ]
+
+
+$menu_2 = [
+  {page: 'Forgot account?', href: '/recover'},
+  {page: 'Sign Up', href: '/registration'},
+  {page: 'LogIn', href: '/'},
   ]
 #------------------------
 #HOME PAGE  
@@ -24,7 +32,6 @@ end
 post '/' do
 
    b = User.find_by(email: params[:email]) 
-   p b 
    p params
   if !b.nil? && params[:password] == b[:password].to_s
     session[:user_id] = b.id
@@ -93,6 +100,7 @@ post '/generalPage' do
   posts_user = User.find_by(username: params[:username])
   
   if !posts_user.nil? 
+
     e = posts_user[:id].to_i
     @post = Post.create(content: params[:content], user_id: e) 
     
