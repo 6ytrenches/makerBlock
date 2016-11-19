@@ -12,7 +12,15 @@ $menu = [
   {page: 'Home', href: '/'},
   {page: 'Posts', href: '/generalPage'},
   {page: 'Personal', href: '/personal'},
-  {page: 'Users', href: '/all_users'}
+  {page: 'Users', href: '/all_users'},
+  {page: 'Logout', href: '/logout'}
+  ]
+
+
+$menu_2 = [
+  {page: 'Forgot account?', href: '/recover'},
+  {page: 'Sign Up', href: '/registration'},
+  {page: 'LogIn', href: '/'},
   ]
 #------------------------
 #HOME PAGE  
@@ -24,7 +32,6 @@ end
 post '/' do
 
    b = User.find_by(email: params[:email]) 
-   p b 
    p params
   if !b.nil? && params[:password] == b[:password].to_s
     session[:user_id] = b.id
@@ -56,9 +63,10 @@ end
 #PERSONAL PAGE
 
 get '/personal' do 
-  @users = User.all
+  
+  
+  if session[:user_id]
   @user = User.find(session[:user_id])
-  if !@user.nil?
   p @user
   erb :personal
 else 
@@ -92,6 +100,7 @@ post '/generalPage' do
   posts_user = User.find_by(username: params[:username])
   
   if !posts_user.nil? 
+
     e = posts_user[:id].to_i
     @post = Post.create(content: params[:content], user_id: e) 
     
@@ -143,7 +152,7 @@ end
 
 
 get "/logout" do
-  session.destroy
+  session[:user_id] = nil
   redirect './'
   end
 #------------------------------------------
@@ -189,7 +198,10 @@ end
 helpers do
   def current_user 
     if session[:user_id]
-      User.find(session[:user_id])
+       User.find(session[:user_id])
+       
+     else
+      return false
     end
   end
 end
